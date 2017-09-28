@@ -1,0 +1,93 @@
+{
+  "productList": {
+    "pc": {
+      "title": "PC产品",
+      "list": [
+        {
+          "title": "数据统计-百度",
+          "url": "https://www.baidu.com/"
+        },
+        {
+          "title": "数据预测-京东",
+          "url": "https://www.jd.com/",
+          "hot": true
+        },
+        {
+          "title": "数据统计-百度",
+          "url": "https://www.baidu.com/"
+        },
+        {
+          "title": "数据预测-京东",
+          "url": "https://www.jd.com/"
+        }
+      ]
+    },
+    "app": {
+      "title": "应用类",
+      "last": true,
+      "list": [
+        {
+          "title": "数据统计-百度2",
+          "url": "https://www.baidu.com/",
+          "hot": true
+        },
+        {
+          "title": "数据预测-京东2",
+          "url": "https://www.jd.com/"
+        },
+        {
+          "title": "数据统计-百度2",
+          "url": "https://www.baidu.com/"
+        },
+        {
+          "title": "数据预测-京东2",
+          "url": "https://www.jd.com/"
+        }
+      ]
+    }
+  },
+  "newsList": [
+    {
+      "title": "最新消息1dddddddddddddddddddssssssssssssddddddddddddddddddddddddddd",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "title": "最新消息2",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "title": "最新消息3",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "title": "最新消息4",
+      "url": "https://www.baidu.com/"
+    }
+  ],
+  "boardList": [
+    {
+      "title": "开发产品0",
+      "img": "logo0",
+      "desc": "开发产品是一款开放产品000",
+      "saleOut": false
+    },
+    {
+      "title": "开发产品1",
+      "img": "logo1",
+      "desc": "开发产品是一款开放产品111",
+      "saleOut": false
+    },
+    {
+      "title": "开发产品2",
+      "img": "logo2",
+      "desc": "开发产品是一款开放产品222",
+      "saleOut": false
+    },
+    {
+      "title": "开发产品3",
+      "img": "logo3",
+      "desc": "开发产品是一款开放产品333",
+      "saleOut": false
+    }
+  ]
+}
