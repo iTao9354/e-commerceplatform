@@ -25,9 +25,9 @@
       </div>
     </div>
     <div class="index-right">
-      <!-- <slide-show></slide-show> -->
+      <slide-show :slides="slides" :inv="invTime" @onchange="dosth"></slide-show>
       <ul class="index-board">
-        <li :class="[{'board-item-even': index%2}, 'index-board-'+item.img]" v-for="(item, index) in boardList">
+        <li :class="[{'board-item-even': index%2}, 'index-board'+item.id]" v-for="(item, index) in boardList">
           <div class="board-item-icon"></div>
           <div class="board-item-info">
             <h4>{{ item.title }}</h4>
@@ -43,12 +43,39 @@
 </template>
 
 <script>
+import slideShow from '../components/slideShow'
 export default {
+  components: {
+    slideShow
+  },
   data () {
     return {
       productList: {},   // 全部产品
       newsList: [],      // 最新消息
-      boardList: []      // 面板信息
+      boardList: [],     // 面板信息
+      invTime: 2000,
+      slides: [         // 幻灯片
+        {
+          'src': require('../assets/slideShow/pic1.jpg'),
+          'title': 'xxx1',
+          'href': 'detail/analysis'
+        },
+        {
+          'src': require('../assets/slideShow/pic2.jpg'),
+          'title': 'xxx2',
+          'href': 'detail/count'
+        },
+        {
+          'src': require('../assets/slideShow/pic3.jpg'),
+          'title': 'xxx3',
+          'href': 'http://xxx.xxx.com'
+        },
+        {
+          'src': require('../assets/slideShow/pic4.jpg'),
+          'title': 'xxx4',
+          'href': 'detail/forecast'
+        }
+      ]
     }
   },
   created () {
@@ -58,6 +85,8 @@ export default {
     this.initLatestNews()
     // 初始化面板信息
     this.initBoardList()
+    // 初始化幻灯片信息
+    // this.initSlides()
   },
   methods: {
     // 初始化全部产品
@@ -83,6 +112,17 @@ export default {
       }, err => {
         console.log(err)
       })
+    },
+    // 初始化幻灯片信息
+    initSlides () {
+      this.$http.post('api/slides').then(res => {
+        this.slides = res.data
+      }, err => {
+        console.log(err)
+      })
+    },
+    dosth (index) {
+      // console.log('监听子组件幻灯片变化，当前为第' + (index + 1) + '张图')
     }
   }
 }
@@ -168,17 +208,17 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
   }
-  .index-board-logo0 .board-item-icon {
-    background-image: url(../assets/logo0.png);
+  .index-board1 .board-item-icon {
+    background-image: url(../assets/images/1.png);
   }
-  .index-board-logo1 .board-item-icon {
-    background-image: url(../assets/logo0.png);
+  .index-board2 .board-item-icon {
+    background-image: url(../assets/images/2.png);
   }
-  .index-board-logo2 .board-item-icon {
-    background-image: url(../assets/logo0.png);
+  .index-board3 .board-item-icon {
+    background-image: url(../assets/images/3.png);
   }
-  .index-board-logo3 .board-item-icon {
-    background-image: url(../assets/logo0.png);
+  .index-board4 .board-item-icon {
+    background-image: url(../assets/images/4.png);
   }
   .board-item-info {
     flex: 8;

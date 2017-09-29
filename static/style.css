@@ -42,3 +42,18 @@ body {
   color: #444;
   background: #f0f2f5;
 }   /* end of css reset */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
